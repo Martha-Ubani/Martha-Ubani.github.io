@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Martha Ubani — Portfolio</title>
+<meta name="description" content="Martha Ubani — Computer Science, cybersecurity, design, beauty and entrepreneurship.">
+<style>
+:root{
+  --bg:#090909;
+  --panel:#111111;
+  --panel2:#151515;
+  --text:#f2eee7;
+  --muted:#aaa59d;
+  --gold:#d9ad5b;
+  --line:#2b2925;
+  --max:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bg);color:var(--text);
+  font-family:"Times New Roman",Times,serif;line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+.container{width:min(var(--max),calc(100% - 48px));margin:auto}
+.serif{font-family:"Times New Roman",Times,serif}
+header{
+  position:sticky;top:0;z-index:20;
+  background:rgba(9,9,9,.88);backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(255,255,255,.05);
+}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:Georgia,serif;font-size:20px;letter-spacing:.08em}
+.logo span{color:var(--gold)}
+nav{display:flex;gap:30px}
+nav a{font-size:14px;color:#d1cbc2;letter-spacing:.06em;text-transform:uppercase}
+nav a:hover{color:var(--gold)}
+.hero{min-height:calc(100vh - 76px);display:grid;grid-template-columns:1.25fr .75fr;align-items:center;gap:70px;padding:90px 0}
+.eyebrow{color:var(--gold);font-size:12px;letter-spacing:.25em;text-transform:uppercase;margin-bottom:22px}
+h1{font:normal clamp(58px,8vw,108px)/.92 "Times New Roman",Times,serif;margin:0 0 30px;letter-spacing:-.045em}
+.hero-copy{max-width:650px;font-size:20px;color:#c1bcb4}
+.hero-copy strong{color:var(--text);font-weight:500}
+.buttons{display:flex;gap:12px;margin-top:36px;flex-wrap:wrap}
+.btn{padding:14px 22px;border:1px solid var(--gold);font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+.btn.primary{background:var(--gold);color:#111}
+.btn.secondary{border-color:#57524a}
+.signature{
+  border-left:1px solid var(--gold);padding-left:28px;
+  align-self:end;max-width:390px;margin-bottom:15px;
+}
+.signature p{margin:0;color:#aaa59d;font-size:16px}
+.signature .big{font:italic 29px/1.25 "Times New Roman",Times,serif;color:var(--text);margin-bottom:16px}
+section{padding:125px 0;border-top:1px solid var(--line)}
+.section-head{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px;margin-bottom:55px}
+.section-no{color:var(--gold);font-size:12px;letter-spacing:.25em;text-transform:uppercase}
+h2{font:normal clamp(42px,5vw,68px)/1.02 "Times New Roman",Times,serif;margin:13px 0 0;letter-spacing:-.035em}
+.lead{font-size:18px;color:#b6b1aa;max-width:650px;margin:28px 0 0}
+.about-grid{display:grid;grid-template-columns:.75fr 1.25fr;gap:80px}
+.about-list{border-left:1px solid var(--gold);padding-left:28px}
+.about-item{margin-bottom:28px}
+.about-item:last-child{margin-bottom:0}
+.about-item b{display:block;color:var(--text);font-size:17px;margin-bottom:3px}
+.about-item span{color:var(--muted)}
+.about-text p{font-size:20px;color:#d0cbc3;margin:0 0 24px}
+.about-text p:last-child{margin-bottom:0}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{
+  background:var(--panel);border:1px solid var(--line);padding:32px;
+  min-height:265px;transition:.25s ease;
+}
+.card:hover{transform:translateY(-4px);border-color:#4a4439}
+.number{color:var(--gold);font-size:12px;letter-spacing:.2em}
+.card h3{font:normal 30px/1.1 "Times New Roman",Times,serif;margin:38px 0 13px}
+.card p{margin:0;color:#aaa59d;font-size:16px}
+.work-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.work{
+  background:var(--panel2);border:1px solid var(--line);padding:34px;min-height:300px;
+}
+.work .type{color:var(--gold);font-size:12px;letter-spacing:.2em;text-transform:uppercase}
+.work h3{font:normal 34px/1.05 "Times New Roman",Times,serif;margin:30px 0 15px}
+.work p{color:#aaa59d;max-width:560px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:25px}
+.tag{border:1px solid #3b3833;padding:6px 10px;color:#aaa59d;font-size:12px}
+.business{
+  display:grid;grid-template-columns:1fr 1fr;gap:18px;
+}
+.business-card{border:1px solid var(--line);padding:40px;background:var(--panel)}
+.business-card h3{font:normal 36px/1.05 "Times New Roman",Times,serif;margin:18px 0}
+.business-card p{color:#aaa59d}
+.business-card .small{font-size:12px;color:var(--gold);letter-spacing:.2em;text-transform:uppercase}
+.quote{padding:105px 0;text-align:center;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.quote p{font:italic clamp(31px,4.4vw,54px)/1.18 "Times New Roman",Times,serif;max-width:1000px;margin:auto;color:#eee9e1}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:80px}
+.contact h2{max-width:500px}
+.contact p{color:#aaa59d;font-size:17px;max-width:520px}
+.links{border-top:1px solid var(--line)}
+.link{display:flex;justify-content:space-between;align-items:center;padding:22px 0;border-bottom:1px solid var(--line);font-size:17px}
+.link span:last-child{color:var(--muted);font-size:14px}
+footer{border-top:1px solid var(--line);padding:30px 0;color:#77736d;font-size:13px;display:flex;justify-content:space-between}
+@media(max-width:850px){
+  .container{width:min(var(--max),calc(100% - 32px))}
+  nav{display:none}
+  .hero{grid-template-columns:1fr;gap:55px;padding:80px 0}
+  .signature{align-self:auto}
+  .section-head,.about-grid,.contact,.business{grid-template-columns:1fr;gap:35px}
+  .cards{grid-template-columns:1fr 1fr}
+}
+@media(max-width:560px){
+  h1{font-size:58px}
+  .hero-copy{font-size:17px}
+  section{padding:85px 0}
+  .cards,.work-grid{grid-template-columns:1fr}
+  .card,.work{min-height:auto}
+  .quote{padding:75px 0}
+  .quote p{font-size:31px}
+  footer{gap:20px;flex-direction:column}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a class="logo" href="#top">MARTHA<span>.</span></a>
+    <nav aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="#what-i-do">What I Do</a>
+      <a href="#work">Work</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="container hero">
+    <div>
+      <div class="eyebrow">Martha Ubani · Creative / Tech / Business</div>
+      <h1 class="serif">A little bit of everything I love.</h1>
+      <p class="hero-copy">
+        I’m Martha Ubani — a <strong>Computer Science graduate, cybersecurity enthusiast,
+        designer, lash artist and entrepreneur.</strong> I’m building a career that gives
+        my technical side and my creative side room to exist together.
+      </p>
+      <div class="buttons">
+        <a class="btn primary" href="#work">Explore my work</a>
+        <a class="btn secondary" href="#contact">Let’s connect</a>
+      </div>
+    </div>
+    <div class="signature">
+      <p class="big">“I’m interested in the things that make ideas useful, beautiful and real.”</p>
+      <p>Technology, design, beauty and business — different interests, one person behind them.</p>
+    </div>
+  </div>
+
+  <section id="about">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="section-no">01 — About me</div>
+          <h2>A little about Martha.</h2>
+        </div>
+        <p class="lead">I like learning, creating and building things that feel intentional — whether I’m working with technology, visuals, beauty or business.</p>
+      </div>
+      <div class="about-grid">
+        <div class="about-list">
+          <div class="about-item"><b>Computer Science graduate.</b><span>A technical foundation that keeps me curious about how things work.</span></div>
+          <div class="about-item"><b>Creative at heart.</b><span>Design, beauty, branding and visual storytelling are natural extensions of me.</span></div>
+          <div class="about-item"><b>Entrepreneurial by nature.</b><span>I enjoy turning ideas into brands and experiences people can actually use.</span></div>
+        </div>
+        <div class="about-text">
+          <p>I’m Martha Ubani, a multidisciplinary creative and tech-minded entrepreneur. My interests sit at the intersection of technology, design, beauty and business.</p>
+          <p>From cybersecurity and web projects to graphics, lash artistry, brow lamination and building my own businesses, I’m comfortable learning something new and making it mine.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="what-i-do">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="section-no">02 — What I do</div>
+          <h2>Different disciplines. One mind.</h2>
+        </div>
+        <p class="lead">These are the spaces where I learn, create, solve problems and build.</p>
+      </div>
+      <div class="cards">
+        <article class="card"><div class="number">01</div><h3>Cybersecurity</h3><p>Exploring security, ethical hacking, risk, networks and practical cybersecurity concepts.</p></article>
+        <article class="card"><div class="number">02</div><h3>Web Design</h3><p>Designing and building web experiences with a Computer Science foundation behind the work.</p></article>
+        <article class="card"><div class="number">03</div><h3>Graphics Design</h3><p>Creating visual identities, social content and designs that communicate clearly and beautifully.</p></article>
+        <article class="card"><div class="number">04</div><h3>Product Design</h3><p>Interested in thoughtful digital products, user experience and solving problems through design.</p></article>
+        <article class="card"><div class="number">05</div><h3>Lash Artistry</h3><p>Creating beauty looks through detail-focused lash extensions and a personal touch.</p></article>
+        <article class="card"><div class="number">06</div><h3>Entrepreneurship</h3><p>Building ideas into brands and experiences — including my businesses in fashion, home and beauty.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="section-no">03 — Selected work</div>
+          <h2>Things I’ve built.</h2>
+        </div>
+        <p class="lead">A mix of technical projects, business building and creative work — because my portfolio is not limited to one lane.</p>
+      </div>
+      <div class="work-grid">
+        <article class="work">
+          <div class="type">Computer Science</div>
+          <h3>E-commerce Website</h3>
+          <p>A web project focused on designing and implementing an e-commerce website for a small business.</p>
+          <div class="tags"><span class="tag">Web</span><span class="tag">E-commerce</span><span class="tag">Computer Science</span></div>
+        </article>
+        <article class="work">
+          <div class="type">Cybersecurity</div>
+          <h3>Security Assessment</h3>
+          <p>Practical assessment work covering vulnerabilities, risk, security findings and recommended controls.</p>
+          <div class="tags"><span class="tag">Security</span><span class="tag">Risk</span><span class="tag">GRC</span></div>
+        </article>
+        <article class="work">
+          <div class="type">Entrepreneurship</div>
+          <h3>Shop With Martha</h3>
+          <p>A lifestyle business built around <strong>footwear and beddings</strong>, with a focus on comfort, style and everyday living.</p>
+          <div class="tags"><span class="tag">Business</span><span class="tag">Footwear</span><span class="tag">Beddings</span><span class="tag">Brand</span></div>
+        </article>
+        <article class="work">
+          <div class="type">Beauty & Creative</div>
+          <h3>Beauty & Visual Work</h3>
+          <p>Creative work across graphics design, lash artistry and brow lamination — detail-driven services with a strong visual eye.</p>
+          <div class="tags"><span class="tag">Graphics</span><span class="tag">Lashes</span><span class="tag">Brow Lamination</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="section-no">04 — Businesses</div>
+          <h2>Things I’m building.</h2>
+        </div>
+        <p class="lead">I’m interested in creating brands that feel like people — clear, memorable and intentional.</p>
+      </div>
+      <div class="business">
+        <article class="business-card">
+          <div class="small">Lifestyle · Retail</div>
+          <h3>Shop With Martha</h3>
+          <p>My business in <strong>footwear and beddings</strong>, built around comfort, style and the little things that make everyday life feel better.</p>
+          <div class="tags"><span class="tag">Footwear</span><span class="tag">Beddings</span><span class="tag">Entrepreneurship</span></div>
+        </article>
+        <article class="business-card">
+          <div class="small">Beauty · Creative</div>
+          <h3>Beauty & Artistry</h3>
+          <p>My beauty work combines lash extensions and brow lamination with a love for detail, presentation and personal style.</p>
+          <div class="tags"><span class="tag">Lashes</span><span class="tag">Brow Lamination</span><span class="tag">Beauty</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <div class="quote">
+    <div class="container">
+      <p>“I’m not putting myself in one box. I’m building a life that has room for all the things I love.”</p>
+    </div>
+  </div>
+
+  <section id="contact">
+    <div class="container">
+      <div class="contact">
+        <div>
+          <div class="section-no">05 — Contact</div>
+          <h2>Let’s create something.</h2>
+          <p>If you’re here because you want to collaborate, discuss a creative project, talk business, or simply connect, I’d love to hear from you.</p>
+          <div class="buttons">
+            <a class="btn primary" href="mailto:Marthaubani99@gmail.com">Get in touch</a>
+          </div>
+        </div>
+        <div id="socials" class="links">
+          <div class="link"><span>Email</span><a href="mailto:Marthaubani99@gmail.com">Marthaubani99@gmail.com</a></div>
+          <div class="link"><span>Instagram</span><span>@M_ubani</span></div>
+          <div class="link"><span>TikTok</span><span>@realest_martha</span></div>
+          <div class="link"><span>LinkedIn</span><span>Martha Ubani</span></div>
+          <div class="link"><span>X</span><span>Martha Ubani</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container" style="display:flex;justify-content:space-between;gap:20px;width:100%">
+    <span>© 2026 Martha Ubani</span>
+    <span>Built with intention.</span>
+  </div>
+</footer>
+</body>
+</html>
